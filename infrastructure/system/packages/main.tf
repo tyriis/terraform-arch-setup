@@ -63,7 +63,7 @@ resource "null_resource" "package_install" {
     null_resource.yay_config
   ]
   provisioner "local-exec" {
-    command = "sudo -u ${var.user} yay -S --needed --noconfirm - < /etc/pkglist.txt"
+    command = "sudo -u ${var.user} yay -S --noconfirm - < /etc/pkglist.txt"
     working_dir = "/home/${var.user}/"
   }
 }

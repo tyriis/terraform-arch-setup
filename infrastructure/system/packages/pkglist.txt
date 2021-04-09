@@ -1,7 +1,6 @@
 alsa-utils
 arduino
 colordiff
-cpupower
 cups
 docker
 dosfstools
@@ -10,8 +9,6 @@ fuse2
 gnome-keyring
 openbsd-netcat
 go
-gobject-introspection
-gobject-introspection-runtime
 gst-plugins-base-libs
 gstreamer
 helm
@@ -24,10 +21,8 @@ iftop
 iotop
 jdk-openjdk
 k9s
-libedit
-libgusb
-libxkbcommon
 linux
+linux-tools
 linux-firmware
 linux-headers
 minio-client
@@ -42,7 +37,7 @@ nodejs
 noto-fonts-emoji
 ntp
 openssh
-openssl-1.0
+openssl
 openvpn
 pacman-contrib
 percona-server-clients
