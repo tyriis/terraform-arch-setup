@@ -11,7 +11,7 @@ module "locale" {
   source = "./locale"
 }
 
-module "xinitrc" {
+module "xinit" {
   depends_on = [
     module.locale
   ]
