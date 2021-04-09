@@ -24,4 +24,5 @@ module "i3" {
     module.xinit
   ]
   source = "./i3"
+  user = var.user
 }
