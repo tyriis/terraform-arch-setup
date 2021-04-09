@@ -18,3 +18,10 @@ module "xinitrc" {
   source = "./xinit"
   user = var.user
 }
+
+module "i3" {
+  depends_on = [
+    module.xinit
+  ]
+  source = "./i3"
+}

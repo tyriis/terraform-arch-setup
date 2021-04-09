@@ -18,7 +18,7 @@ resource "null_resource" "package_install" {
     local_file.xinitrc
   ]
   provisioner "local-exec" {
-    command = "sudo chown ${var.user}: .xinitrc"
+    command = "chown ${var.user}: .xinitrc"
     working_dir = "/home/${var.user}/"
   }
 }
