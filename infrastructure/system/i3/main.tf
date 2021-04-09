@@ -20,6 +20,6 @@ resource "null_resource" "ownership" {
   ]
   provisioner "local-exec" {
     command = "chown ${var.user}: config"
-    working_dir = "${local.path}"
+    working_dir = local.path
   }
 }

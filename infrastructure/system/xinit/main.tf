@@ -20,6 +20,6 @@ resource "null_resource" "ownership" {
   ]
   provisioner "local-exec" {
     command = "chown ${var.user}: .xinitrc"
-    working_dir = "${local.path}"
+    working_dir = local.path
   }
 }
