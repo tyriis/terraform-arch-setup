@@ -16,5 +16,5 @@ module "xinitrc" {
     module.locale
   ]
   source = "./xinit"
-  user = nils
+  user = var.user
 }
