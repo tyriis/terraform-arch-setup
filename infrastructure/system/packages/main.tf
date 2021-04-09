@@ -2,6 +2,7 @@
 
 locals {
   makepkg_conf = templatefile("${path.module}/makepkg.conf.tmpl", {cores = var.cores})
+  pkglist = file("${path.module}/pkglist.txt")
 }
 
 resource "null_resource" "yay_prepare" {
@@ -37,4 +38,32 @@ resource "null_resource" "yay_config" {
 resource "local_file" "makepkg_conf" {
   content = local.makepkg_conf
   filename = "/etc/makepgk.conf"
+  file_permission = "0600"
+}
+
+resource "local_file" "pkglist_txt" {
+  content = local.pkglist
+  filename = "/etc/pkglist.txt"
+  file_permission = "0666"
+}
+
+resource "null_resource" "yay_update" {
+  provisioner "local-exec" {
+    command = "sudo -u ${var.user} yay -Syu --needed --noconfirm"
+    working_dir = "/home/${var.user}/"
+  }
+}
+
+resource "null_resource" "package_install" {
+  triggers = {
+    pkglist = sha1(local.pkglist)
+  }
+  depends_on = [
+    local_file.makepkg_conf,
+    null_resource.yay_config
+  ]
+  provisioner "local-exec" {
+    command = "sudo -u ${var.user} yay -S --needed --noconfirm - < /etc/pkglist.txt"
+    working_dir = "/home/${var.user}/"
+  }
 }
