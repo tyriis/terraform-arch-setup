@@ -10,3 +10,11 @@ module "locale" {
   ]
   source = "./locale"
 }
+
+module "xinitrc" {
+  depends_on = [
+    module.locale
+  ]
+  source = "./xinit"
+  user = nils
+}
