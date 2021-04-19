@@ -26,3 +26,18 @@ module "i3" {
   source = "./i3"
   user = var.user
 }
+
+module "i3blocks" {
+  depends_on = [
+    module.i3
+  ]
+  source = "./i3blocks"
+  user = var.user
+}
+
+module "timesyncd" {
+  depends_on = [
+    module.packages
+  ]
+  source = "./timesyncd"
+}

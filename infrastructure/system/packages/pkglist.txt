@@ -21,10 +21,7 @@ iftop
 iotop
 jdk-openjdk
 k9s
-linux
 linux-tools
-linux-firmware
-linux-headers
 minio-client
 mosquitto
 neovim
