@@ -43,6 +43,7 @@ prometheus
 prometheus-node-exporter
 pulseaudio
 pyenv
+pyenv-virtualenv
 python-markdown
 python-pip
 python-pre-commit
@@ -83,5 +84,5 @@ spaceship-prompt
 spotify
 terraform-docs-bin
 tflint-bin
-tfsec
+tfsec-bin
 visual-studio-code-bin

@@ -4,8 +4,11 @@
 # @url https://wiki.archlinux.org/index.php/GNOME/Keyring#xinitrc_method
 dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # start i3 with loging
 # exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 # start without loging
 exec i3
+# xrandr --output HDMI-2 --primary
+# xrandr --output DP-1 --primary --auto --output HDMI-2 --left-of DP-1 --auto
