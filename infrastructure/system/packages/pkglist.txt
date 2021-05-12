@@ -86,3 +86,12 @@ terraform-docs-bin
 tflint-bin
 tfsec-bin
 visual-studio-code-bin
+python2
+kubectl
+flux-bin
+kubeseal-bin
+sops
+adwaita-icon-theme
+ttf-droid
+ttf-roboto
+otf-font-awesome

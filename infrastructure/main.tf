@@ -4,7 +4,7 @@ module "system" {
   cores = var.cores
 }
 
-module "user" {
-  source = "./user"
-  user = var.user
-}
+#module "user" {
+#  source = "./user"
+#  user = var.user
+#}
