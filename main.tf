@@ -1,7 +1,7 @@
 module "infrastructure" {
   source = "./infrastructure"
-  user = var.user
-  cores = var.cores
+  user   = var.user
+  cores  = var.cores
 }
 
 #data "vault_generic_secret" "test" {

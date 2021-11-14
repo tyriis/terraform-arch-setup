@@ -1,0 +1,1 @@
+SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTR{name}=="Logitech Webcam C925e", ATTR{index}=="0", RUN+="/usr/bin/v4l2-ctl -d $devnode --set-ctrl=zoom_absolute=170"

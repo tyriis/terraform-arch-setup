@@ -1,7 +1,7 @@
 module "system" {
   source = "./system"
-  user = var.user
-  cores = var.cores
+  user   = var.user
+  cores  = var.cores
 }
 
 #module "user" {

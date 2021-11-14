@@ -1,0 +1,37 @@
+[color]
+    ui = true
+
+[user]
+    email = nils@techtales.io
+    name = Nils Müller
+
+[core]
+    excludesfile = ~/.gitignore
+    pager = less -iXFR
+    editor = "code --wait"
+
+[alias]
+    st = "status"
+    hist = "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+    undo = "reset HEAD~"
+
+[includeIf "gitdir:~/projects/strg/"]
+    path = /home/nils/projects/strg/.gitconfig
+
+[includeIf "gitdir:~/projects/techtales/"]
+    path = /home/nils/projects/techtales/.gitconfig
+
+[commit]
+    # show diff in commit editor window
+    verbose = true
+
+[push]
+    # commit resolveable tags on commit
+    followTags = true
+    default = simple
+
+[pull]
+    rebase = false
+
+[init]
+    defaultBranch = main

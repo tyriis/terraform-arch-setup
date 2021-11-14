@@ -1,7 +1,7 @@
 module "packages" {
   source = "./packages"
-  user = var.user
-  cores = var.cores
+  user   = var.user
+  cores  = var.cores
 }
 
 module "locale" {
@@ -28,4 +28,26 @@ module "timesyncd" {
 
 module "certs" {
   source = "./certs"
+}
+
+module "udev" {
+  source = "./udev"
+}
+
+module "gnome_keyring" {
+  depends_on = [
+    module.packages
+  ]
+  source = "./gnome-keyring"
+}
+
+module "modprobe" {
+  source = "./modprobe"
+}
+
+module "docker" {
+  depends_on = [
+    module.packages
+  ]
+  source = "./docker"
 }

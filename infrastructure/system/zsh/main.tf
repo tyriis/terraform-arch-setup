@@ -2,12 +2,12 @@
 
 locals {
   xinitrc = file("${path.module}/xinitrc")
-  path = "/home/${var.user}"
+  path    = "/home/${var.user}"
 }
 
 resource "local_file" "xinitrc" {
-  content = local.xinitrc
-  filename = "${local.path}/.xinitrc"
+  content         = local.xinitrc
+  filename        = "${local.path}/.xinitrc"
   file_permission = "0600"
 }
 
@@ -19,7 +19,7 @@ resource "null_resource" "ownership" {
     local_file.xinitrc
   ]
   provisioner "local-exec" {
-    command = "chown ${var.user}: .xinitrc"
+    command     = "chown ${var.user}: .xinitrc"
     working_dir = local.path
   }
 }
